@@ -1,0 +1,40 @@
+sudo yum update -y              -----------latest available versions of software.
+sudo yum install -y nodejs npm         ----------Node.js: A JavaScript runtime that allows you to run JavaScript on the server side.
+                                                 npm: A package manager for Node.js that lets you install libraries and frameworks.
+                                                 -y means you agree to install without needing to confirm each step
+
+
+-----------------------------------------------------------
+
+mkdir hello-world
+cd hello-world
+npm init -y              ---------------------it create a new project folder that keeps track of your project’s details and any libraries you install.
+npm install express      ----------------------This command installs Express, a library that helps you create web applications easily.
+
+-------------------------------------------------------------
+nano app.js
+-----------------------------------------
+const express = require('express'); // Import the Express library
+const app = express(); // Create an Express application
+const port = 80; // Set the port to 80 (the default for web traffic)
+
+app.get('/', (req, res) => { // When someone accesses the home page
+    res.send('Hello World!'); // Respond with "Hello World!"
+});
+
+app.listen(port, () => { // Start the server and listen on port 80
+    console.log(`Example app listening at http://localhost:${port}`); // Log a message
+});
+
+
+explanation:
+const express = require('express');: This line brings in the Express library so you can use it.
+const app = express();: This creates a new Express application, which you will use to handle web requests.
+const port = 80;: This sets the port number to 80, where your app will listen for requests.
+app.get('/', (req, res) => { ... });: This part defines what happens when someone visits the home page of your app. It sends back "Hello World!" as a response.
+app.listen(port, () => { ... });: This starts the server so it can accept incoming requests, and it logs a message to let you know it’s running.
+
+
+--------------------------
+Run the application:
+sudo node app.js
