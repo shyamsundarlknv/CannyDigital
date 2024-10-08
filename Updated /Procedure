@@ -1,0 +1,25 @@
+Click on Create Load Balancer.
+Choose Load Balancer Type:
+
+Choose an Application Load Balancer.
+
+Configure Load Balancer:
+
+Name the load balancer (e.g., HelloWorldLB).
+Scheme: Choose Internet-facing.
+Listeners: Ensure you have a listener on HTTP (port 80).
+Select your VPC and assign the subnets where you want to deploy the load balancer.
+Configure Security Groups:
+
+Choose a security group that allows inbound HTTP traffic (port 80).
+Configure Target Group:
+
+Choose a new target group (e.g., HelloWorldTG).
+Target Type: Select Instance.
+Protocol: HTTP, Port 80.
+Health Checks: HTTP, Path /.
+Register Targets:
+
+Select your EC2 instance as the target for the load balancer.
+Click Add to registered.
+Create Load Balancer.
